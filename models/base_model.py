@@ -5,7 +5,7 @@ Contains the BaseModel class.
 from uuid import uuid4
 from datetime import datetime
 
-class BaseMode:
+class BaseModel:
     def __init__(self):
         self.id = uuid4()
         self.created_at = datetime.today().isoformat()
