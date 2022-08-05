@@ -14,8 +14,8 @@ class BaseModel:
                 if key != "__class__":
                     self.__dict__[key] = value
         else:
-            self.id = uuid4()
-            self.created_at = datetime.today().isoformat()
+            self.id = str(uuid4())
+            self.created_at = datetime.today()
             self.updated_at = self.created_at
 
     def save(self):
@@ -23,7 +23,7 @@ class BaseModel:
 
     def to_dict(self):
         c_at = self.created_at.isoformat()
-        c_at = self.updated_at.isoformat()
+        u_at = self.updated_at.isoformat()
         self_d = self.__dict__
         self_d["__class__"] = __class__.__name__
         self_d["created_at"] = c_at
