@@ -5,6 +5,7 @@ Contains the file storage class
 from models.base_model import BaseModel
 import json
 
+
 class FileStorage:
     """ The file storage class."""
     __file_path = "file.json"
@@ -22,7 +23,7 @@ class FileStorage:
     def save(self):
         """ Stores all objects to json to a json file"""
         odict = FileStorage.__objects
-        objdict={}
+        objdict = {}
         for obj_id, obj in odict.items():
             objdict[obj_id] = obj.to_dict()
         with open(FileStorage.__file_path, "w") as f:
