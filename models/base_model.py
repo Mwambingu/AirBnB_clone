@@ -7,6 +7,7 @@ from datetime import datetime
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
+        """Initializes an instance of Base Model"""
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
@@ -19,9 +20,11 @@ class BaseModel:
             self.updated_at = self.created_at
 
     def save(self):
+        """Stamps update time and saves a new object"""
         self.updated_at = datetime.today().strftime("%Y-%m-%dT%H:%M:%S.%f")
 
     def to_dict(self):
+        """Coverts an object to a dictionary"""
         c_at = self.created_at.isoformat()
         u_at = self.updated_at.isoformat()
         self_d = self.__dict__
@@ -31,4 +34,5 @@ class BaseModel:
         return self.__dict__
 
     def __str__(self):
+        """Returns the string representation of an object"""
         return f"[{__class__.__name__}] ({self.id}) {self.__dict__}"
