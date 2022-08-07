@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
 """
-Contains the BaseModel class. 
+This module contains BaseModel class
 """
 from uuid import uuid4
 from datetime import datetime
 import models
+
+
 class BaseModel:
+    """This is the BaseModel of the project.
+    """
     def __init__(self, *args, **kwargs):
-        """Initializes an instance of Base Model"""
+        """Initializes a new instance from a dictionary.
+        Args:
+            *args (any): Not used for this project
+            **kwargs (dict): Accepts var len of keyword args as attributes
+        """
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
