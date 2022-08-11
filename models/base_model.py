@@ -16,6 +16,10 @@ class BaseModel:
             *args (any): Not used for this project
             **kwargs (dict): Accepts var len of keyword args as attributes
         """
+        self.id = str(uuid4())
+        self.created_at = datetime.today()
+        self.updated_at = datetime.today()
+
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
@@ -23,9 +27,6 @@ class BaseModel:
                 if key != "__class__":
                     self.__dict__[key] = value
         else:
-            self.id = str(uuid4())
-            self.created_at = datetime.today()
-            self.updated_at = self.created_at
             models.storage.new(self)
 
     def save(self):
