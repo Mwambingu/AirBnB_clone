@@ -17,7 +17,6 @@ class FileStorage:
 
     def new(self, obj):
         """Adds a new instance to the object storage"""
-        print(obj)
         cls_id = "{}{}".format(obj.__class__.__name__, obj.id)
         FileStorage.__objects[cls_id] = obj
 
