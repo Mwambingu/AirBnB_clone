@@ -7,6 +7,7 @@ from datetime import datetime
 import models
 
 class State(BaseModel):
+    name = ""
     def __init__(self, *args, **kwargs):
         """Initializes a new instance from a dictionary.
         Args:
@@ -14,7 +15,6 @@ class State(BaseModel):
         **kwargs (dict): Accepts var len of keyword args as attributes
         """
         super().__init__()
-        self.name = ""
 
         if kwargs:
             for k, v in kwargs.items():

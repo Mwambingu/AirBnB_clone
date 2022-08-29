@@ -5,6 +5,9 @@ Contains the City module
 from models.base_model import BaseModel
 
 class City(BaseModel):
+    state_id = ""
+    name = ""
+
     def __init__(self, *args, **kwargs):
         """Initializes a new instance from a dictionary.
         Args:
@@ -12,8 +15,6 @@ class City(BaseModel):
         **kwargs (dict): Accepts var len of keyword args as attributes
         """
         super().__init__()
-        self.state_id = ""
-        self.name = ""
 
         if kwargs:
             for k, v in kwargs.items():
