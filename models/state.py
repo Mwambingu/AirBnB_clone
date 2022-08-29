@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
-Contains the user module.
+Contains the State module
 """
 from models.base_model import BaseModel
 from datetime import datetime
 import models
 
-class User(BaseModel):
-
+class State(BaseModel):
     def __init__(self, *args, **kwargs):
         """Initializes a new instance from a dictionary.
         Args:
@@ -15,12 +14,9 @@ class User(BaseModel):
         **kwargs (dict): Accepts var len of keyword args as attributes
         """
         super().__init__()
-        self.email = ""
-        self.password = ""
-        self.first_name = ""
-        self.last_name = ""
+        self.name = ""
 
         if kwargs:
             for k, v in kwargs.items():
-                if k in ["email", "password", "first_name", "last_name"]:
-                    self.__dict__[k] = v
+                if k == "name":
+                    self.__dict__[k] == v
