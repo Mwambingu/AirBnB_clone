@@ -2,6 +2,7 @@
 from models import storage
 from models.base_model import BaseModel
 from models.user import User
+from models.place import Place
 
 all_objs = storage.all()
 print("-- Reloaded objects --")
@@ -25,3 +26,18 @@ my_user2.email = "airbnb2@mail.com"
 my_user2.password = "root"
 my_user2.save()
 print(my_user2)
+
+print("-- Create a new Place --")
+my_place = Place()
+my_place.name = "Urban Furnished Apartment"
+my_place.description = "A comfy two bedroom apartment with a balcony view of Kanairo."
+my_place.my_number_rooms = 4
+my_place.number_bathrooms = 1
+my_place.max_guest = 2
+my_place.price_by_night = 55
+my_place.latitude = 55.34
+my_place.longitude = 33.42
+my_place.save()
+print(my_place)
+
+

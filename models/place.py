@@ -24,4 +24,12 @@ class Place(BaseModel):
             **kwargs (dict): Accepts var len of keyword args as attributes
         """
         super().__init__()
+
+        if kwargs:
+            for k, v in kwargs.items():
+                if k in ["city_id", "user_id", "name", "description", "amenity_ids"]:
+                    self.__dict__[k] = v
+                if k in ["number_rooms", "number_bathrooms", "max_guest", "price_by_night"]:
+                    self.__dict__[k] = int(v)
+
        
