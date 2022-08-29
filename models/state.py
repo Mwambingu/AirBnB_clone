@@ -19,4 +19,4 @@ class State(BaseModel):
         if kwargs:
             for k, v in kwargs.items():
                 if k == "name":
-                    self.__dict__[k] == v
+                    self.__dict__[k] = v
