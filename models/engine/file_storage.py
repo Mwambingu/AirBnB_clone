@@ -3,13 +3,16 @@
 Contains the file storage class
 """
 from models.base_model import BaseModel
+from models.user import User
 import json
+
 
 
 class FileStorage:
     """ The file storage class."""
     __file_path = "file.json"
     __objects = {}
+    count = 0
 
     def all(self):
         """Returns all the objects stored"""
@@ -35,7 +38,8 @@ class FileStorage:
             with open(FileStorage.__file_path) as f:
                 objdict = json.load(f)
                 for v in objdict.values():
-                    new_obj = BaseModel(**v)
+                    dict_cls = v['__class__']
+                    new_obj = eval(dict_cls)(**v)
                     self.new(new_obj)
         except FileNotFoundError:
             return

@@ -3,9 +3,12 @@
 Contains the HBNB Console
 """
 import cmd
-from models import base_model
+from models.base_model import BaseModel
+from models.user import User
 from models import storage
+from models import user
 
+classes = ["BaseModel", "User"]
 
 class HBNBCommand(cmd.Cmd):
     """Defines the HBNB CLI
@@ -27,9 +30,12 @@ class HBNBCommand(cmd.Cmd):
         pass
     
     def do_create(self, arg):
-        """Creates a new instance"""
-        if arg == "BaseModel":
-            new_instance = base_model.BaseModel()
+        """Usage:  Creates a new instance based on a class
+        ex: create BaseModel
+        output: <instance id> b2947ae0-ff20-4ca2-a9ca-6ef101eac2be
+        """
+        if arg in classes:
+            new_instance = eval(arg)()
             new_instance.save()
             print(new_instance.id)
 
@@ -37,6 +43,22 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         else:
             print("** class doesn't exist **")
+
+    def do_all(self, arg):
+        """Usage:  Prints all created instances or from a specified class
+        ex: all <class name>
+        output: [<class.name>] (<instance.id>) {<instance>}
+        """
+        if arg:
+            if arg not in classes:
+                print("** class doesn't exist **")
+            else:
+                for v in storage.all().values():
+                    if arg == v.__class__.__name__:
+                        print(v)
+        else:
+            for v in storage.all().values():
+                print(v)
     
     def do_show(self, arg):
         """Usage:  Represents an instance based on class name and id.
@@ -47,7 +69,7 @@ class HBNBCommand(cmd.Cmd):
         
         if not arg:
             print("** class name missing **")
-        elif "BaseModel" != arg_list[0]:
+        elif arg_list[0] not in classes:
             print("** class doesn't exist  **")
         elif len(arg_list) < 2:
             print("** Instance id missing **")
@@ -71,7 +93,7 @@ class HBNBCommand(cmd.Cmd):
 
         if not arg:
             print("** class name missing  **")
-        elif "BaseModel" != arg_list[0]:
+        elif arg_list[0] not in classes:
             print("** class doesn't exist **")
         elif len(arg_list) < 2:
             print("** Instance id missing  **")
@@ -93,7 +115,49 @@ class HBNBCommand(cmd.Cmd):
             for keys in storage.all().keys():
                 print(keys)
             
-        
+    def do_update(self, arg):
+        """Usage:  Updates an instance based on the class and the id.
+        ex: update BaseModel 1234-1234-1234 email 'aibnb@mail.com'"""
+
+        arg_list = arg.split(" ")
+        list_of_obj = storage.all()
+        all_objs = []
+        obj_attr = []
+        obj_ids  = []
+
+        for v in list_of_obj.values():
+            all_objs.append(v.__dict__)
+
+        for v in list_of_obj.values():
+            obj_ids.append(v.id)
+
+        for k in all_objs[0].keys():
+            obj_attr.append(k)
+
+
+        first_checks = False
+
+        if not arg:
+            print("** class name missing **")
+        elif arg_list[0] not in classes:
+            print("** class doesn't exist  **")
+        elif len(arg_list) < 2:
+            print("** instance id missing **")
+        elif arg_list[1] not in obj_ids:
+            print("** no instance found **")
+        elif len(arg_list) < 3:
+            print("** attribute name missing **")
+        elif len(arg_list) < 4:
+            print("** value missing **")
+        else:
+            first_checks = True
+
+        if first_checks:
+            obj_name = arg_list[0] + arg_list[1]
+            obj = list_of_obj[obj_name]
+            setattr(obj, arg_list[2], arg_list[3])
+            obj.save()
+
 
 
 if __name__ == "__main__":

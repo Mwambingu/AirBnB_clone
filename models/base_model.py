@@ -37,12 +37,12 @@ class BaseModel:
     def to_dict(self):
         """Coverts an object to a dictionary"""
         self_d = self.__dict__.copy()
-        self_d["__class__"] = __class__.__name__
+        self_d["__class__"] = self.__class__.__name__
         self_d["created_at"] = self.created_at.isoformat()
         self_d["updated_at"] = self.updated_at.isoformat()
         return self_d
 
     def __str__(self):
         """Returns the string representation of an object"""
-        c_name = __class__.__name__
+        c_name = self.__class__.__name__
         return "[{}] ({}) {}".format(c_name, self.id, self.__dict__)
