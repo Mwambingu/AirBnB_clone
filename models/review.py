@@ -20,5 +20,5 @@ class Review(BaseModel):
         if kwargs:
             for k, v in kwargs.items():
                 if k in ["place_id", "user_id", "text"]:
-                    self.__dict__[key] = v
+                    self.__dict__[k] = v
 

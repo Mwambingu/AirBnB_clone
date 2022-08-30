@@ -12,6 +12,7 @@ from models.place import Place
 from models.review import Review
 from models import storage
 from models import user
+import shlex
 
 classes = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
 
@@ -124,7 +125,7 @@ class HBNBCommand(cmd.Cmd):
         """Usage:  Updates an instance based on the class and the id.
         ex: update BaseModel 1234-1234-1234 email 'aibnb@mail.com'"""
 
-        arg_list = arg.split(" ")
+        arg_list = shlex.split(arg)
         list_of_obj = storage.all()
         all_objs = []
         obj_attr = []
