@@ -1,24 +1,19 @@
-#!/usr/bin/env python3
-"""
-Contains the user module.
-"""
+#!/usr/bin/python3
+"""Defines the User class."""
 from models.base_model import BaseModel
 
+
 class User(BaseModel):
+    """Represent a User.
 
-    def __init__(self, *args, **kwargs):
-        """Initializes a new instance from a dictionary.
-        Args:
-        *args (any): Not used for this project
-        **kwargs (dict): Accepts var len of keyword args as attributes
-        """
-        super().__init__()
-        self.email = ""
-        self.password = ""
-        self.first_name = ""
-        self.last_name = ""
+    Attributes:
+        email (str): The email of the user.
+        password (str): The password of the user.
+        first_name (str): The first name of the user.
+        last_name (str): The last name of the user.
+    """
 
-        if kwargs:
-            for k, v in kwargs.items():
-                if k in ["email", "password", "first_name", "last_name"]:
-                    self.__dict__[k] = v
+    email = ""
+    password = ""
+    first_name = ""
+    last_name = ""

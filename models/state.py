@@ -1,22 +1,13 @@
-#!/usr/bin/env python3
-"""
-Contains the State module
-"""
+#!/usr/bin/python3
+"""Defines the State class."""
 from models.base_model import BaseModel
-from datetime import datetime
-import models
+
 
 class State(BaseModel):
-    name = ""
-    def __init__(self, *args, **kwargs):
-        """Initializes a new instance from a dictionary.
-        Args:
-        *args (any): Not used for this project
-        **kwargs (dict): Accepts var len of keyword args as attributes
-        """
-        super().__init__()
+    """Represent a state.
 
-        if kwargs:
-            for k, v in kwargs.items():
-                if k == "name":
-                    self.__dict__[k] = v
+    Attributes:
+        name (str): The name of the state.
+    """
+
+    name = ""

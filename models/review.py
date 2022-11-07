@@ -1,24 +1,17 @@
-#!/usr/bin/env python3
-"""
-This module contains the Review class.
-"""
+#!/usr/bin/python3
+"""Defines the Review class."""
 from models.base_model import BaseModel
 
+
 class Review(BaseModel):
+    """Represent a review.
+
+    Attributes:
+        place_id (str): The Place id.
+        user_id (str): The User id.
+        text (str): The text of the review.
+    """
+
     place_id = ""
     user_id = ""
     text = ""
-
-    def __init__(self, *args, **kwargs):
-        """Initializes a new instance from a dictionary.
-        Args:
-            *args (any): Not used for this project
-            **kwargs (dict): Accepts var len of keyword args as attributes
-        """
-        super().__init__()
-
-        if kwargs:
-            for k, v in kwargs.items():
-                if k in ["place_id", "user_id", "text"]:
-                    self.__dict__[k] = v
-

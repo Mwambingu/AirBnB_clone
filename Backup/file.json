@@ -1,0 +1,116 @@
+{
+    "BaseModel2d559737-b59a-4726-8a27-dd456cef87d4": {
+        "id": "2d559737-b59a-4726-8a27-dd456cef87d4",
+        "created_at": "2022-08-29T13:05:42.667510",
+        "updated_at": "2022-08-29T13:05:42.667562",
+        "__class__": "BaseModel"
+    },
+    "Userb6dd6fd8-7364-4e3e-a9d0-768973925e79": {
+        "id": "b6dd6fd8-7364-4e3e-a9d0-768973925e79",
+        "created_at": "2022-08-30T20:22:47.156869",
+        "updated_at": "2022-08-30T20:22:47.156881",
+        "email": "",
+        "password": "",
+        "first_name": "Kinjekitile",
+        "last_name": "",
+        "__class__": "User"
+    },
+    "BaseModel12d3cdb1-de3a-457e-911d-0dae08849624": {
+        "id": "12d3cdb1-de3a-457e-911d-0dae08849624",
+        "created_at": "2022-08-29T13:13:27.894180",
+        "updated_at": "2022-08-29T13:13:27.894214",
+        "__class__": "BaseModel"
+    },
+    "Useraa26c6bb-af60-4eac-a4cc-1d5bd41cf459": {
+        "id": "aa26c6bb-af60-4eac-a4cc-1d5bd41cf459",
+        "created_at": "2022-08-30T20:22:47.156994",
+        "updated_at": "2022-08-30T20:22:47.156999",
+        "email": "",
+        "password": "",
+        "first_name": "",
+        "last_name": "",
+        "__class__": "User"
+    },
+    "User80251c25-e49e-40a8-8b4a-24601af090c8": {
+        "id": "80251c25-e49e-40a8-8b4a-24601af090c8",
+        "created_at": "2022-08-30T20:22:47.157027",
+        "updated_at": "2022-08-30T20:22:47.157030",
+        "email": "",
+        "password": "",
+        "first_name": "",
+        "last_name": "",
+        "__class__": "User"
+    },
+    "BaseModel784e961e-e09d-4638-8ba5-252a5c88a1c9": {
+        "id": "784e961e-e09d-4638-8ba5-252a5c88a1c9",
+        "created_at": "2022-08-29T13:13:32.356144",
+        "updated_at": "2022-08-29T13:13:32.356169",
+        "__class__": "BaseModel"
+    },
+    "State6626f7c7-9f2e-43fd-921c-7eb316da1ee1": {
+        "id": "6626f7c7-9f2e-43fd-921c-7eb316da1ee1",
+        "created_at": "2022-08-30T20:22:47.157119",
+        "updated_at": "2022-08-30T20:22:47.157123",
+        "name": "",
+        "__class__": "State"
+    },
+    "Citybe963e44-164a-4fdb-bda9-f165774900c2": {
+        "id": "be963e44-164a-4fdb-bda9-f165774900c2",
+        "created_at": "2022-08-30T20:22:47.157152",
+        "updated_at": "2022-08-30T20:22:47.157156",
+        "state_id": "",
+        "name": "",
+        "__class__": "City"
+    },
+    "Amenityc4852b33-7839-42a4-9c36-90cfd133813e": {
+        "id": "c4852b33-7839-42a4-9c36-90cfd133813e",
+        "created_at": "2022-08-30T20:22:47.157184",
+        "updated_at": "2022-08-30T20:22:47.157191",
+        "name": "",
+        "__class__": "Amenity"
+    },
+    "Place72a89203-6008-4c80-8e55-c4ff841946c8": {
+        "id": "72a89203-6008-4c80-8e55-c4ff841946c8",
+        "created_at": "2022-08-30T20:22:47.157219",
+        "updated_at": "2022-08-30T20:22:47.157222",
+        "__class__": "Place"
+    },
+    "Userf17a3598-8f20-4ab5-9649-44de89ae8e92": {
+        "id": "f17a3598-8f20-4ab5-9649-44de89ae8e92",
+        "created_at": "2022-08-30T20:22:47.157247",
+        "updated_at": "2022-08-30T20:22:47.157250",
+        "email": "airbnb@mail.com",
+        "password": "root",
+        "first_name": "Betty",
+        "last_name": "Bar",
+        "__class__": "User"
+    },
+    "User6e3d75a3-50cf-4f93-ba1c-cef807f66414": {
+        "id": "6e3d75a3-50cf-4f93-ba1c-cef807f66414",
+        "created_at": "2022-08-30T20:22:47.157274",
+        "updated_at": "2022-08-30T20:22:47.157277",
+        "email": "airbnb2@mail.com",
+        "password": "root",
+        "first_name": "John",
+        "last_name": "",
+        "__class__": "User"
+    },
+    "Place19626a90-a8b1-4572-88f7-44d21cf9bf0d": {
+        "id": "19626a90-a8b1-4572-88f7-44d21cf9bf0d",
+        "created_at": "2022-08-30T20:22:47.157300",
+        "updated_at": "2022-08-30T20:22:47.157303",
+        "name": "Urban Furnished Apartment",
+        "description": "A comfy two bedroom apartment with a balcony view of Kanairo.",
+        "number_bathrooms": 1,
+        "max_guest": 2,
+        "price_by_night": 55,
+        "__class__": "Place"
+    },
+    "Reviewffadceb0-318b-48ba-83f3-6769d9ef8641": {
+        "id": "ffadceb0-318b-48ba-83f3-6769d9ef8641",
+        "created_at": "2022-08-30T20:22:47.157329",
+        "updated_at": "2022-08-30T20:23:46.551210",
+        "text": "I drink asphalt for breakfast coz I ain't a bitch",
+        "__class__": "Review"
+    }
+}

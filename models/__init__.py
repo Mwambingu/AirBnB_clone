@@ -1,7 +1,5 @@
-#!/usr/bin/env python3
-"""
-Initializes the storage module for use by BaseModel.
-"""
+#!/usr/bin/python3
+"""__init__ magic method for models directory"""
 from models.engine.file_storage import FileStorage
 
 
